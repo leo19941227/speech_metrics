@@ -11,5 +11,6 @@ setup(
     install_requires=[
         "editdistance",
         "pb_bss_eval",
+        "sacrebleu",
     ],
 )
