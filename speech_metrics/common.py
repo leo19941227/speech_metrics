@@ -30,8 +30,8 @@ def wer(hyps: List[str], refs: List[str]) -> float:
     Returns:
         float: Averaged word error rate overall utterances.
     """
-    hyps = [h.split(" ") for h in hyps]
-    refs = [r.split(" ") for r in refs]
+    hyps = [h.upper().split(" ") for h in hyps]
+    refs = [r.upper().split(" ") for r in refs]
     return ter(hyps, refs)
 
 
@@ -58,4 +58,6 @@ def cer(hyps: List[str], refs: List[str]) -> float:
     Returns:
         float: Averaged character error rate overall utterances.
     """
+    hyps = [h.upper() for h in hyps]
+    refs = [r.upper() for r in refs]
     return ter(hyps, refs)
